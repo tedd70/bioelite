@@ -1,0 +1,23 @@
+<section class="container">
+    <div class="home-guest-books">
+      <h1>{{ titlePage }}</h1>
+
+      <div class="btn-create">
+        <button mat-raised-button (click)="openModal()" title="Create new guest book">Create new guest book</button>
+      </div>
+
+      <div *ngIf="allGuestBook && allGuestBook.length > 0" class="guest-books">
+        <h3>Messages</h3>
+
+        <div *ngFor="let eachGuestBook of allGuestBook">
+          <div class="each-guest-book">
+            <h4>
+              {{ eachGuestBook.name }} :
+            </h4>
+
+            <p>{{ eachGuestBook.message }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>

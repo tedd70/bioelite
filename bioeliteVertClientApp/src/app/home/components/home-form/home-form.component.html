@@ -1,0 +1,39 @@
+<div class="home-form-section">
+  <h2 mat-dialog-title class="home-form-title">New Guest Book</h2>
+  
+  <mat-dialog-content class="mat-typography">
+    <form class="create-guest-book-form" [formGroup]="addGuestBookForm">
+      <input type="text" placeholder="Name" formControlName="name" required />
+      <div *ngIf="f.name.errors">
+        <div *ngIf="f.name.errors.minlength" class="alert alert-danger">
+          Name must be at least 3 characters!
+        </div>
+      </div>
+        
+      <input type="email" placeholder="Your email" formControlName="email" required/>
+      <div *ngIf="f.email.errors">
+        <div *ngIf="f.email.errors.pattern" class="alert alert-danger">
+          Email must be a valid email address!
+        </div>
+      </div>
+
+
+      <input type="text" placeholder="Your message" formControlName="message" required/>
+      <div *ngIf="f.message.errors">
+        <div *ngIf="f.message.errors.minlength" class="alert alert-danger">
+          Message must be at least 6 characters !
+        </div>
+      </div>
+    </form>
+  </mat-dialog-content>
+  
+  <mat-dialog-actions ALIGN="end">
+    <button mat-button mat-dialog-close (click)='closeDialog()'>Cancel</button>
+    <button
+      mat-button 
+      mat-dialog-close 
+      [disabled]="addGuestBookForm.invalid"
+      [mat-dialog-close]="addGuestBookForm.value"
+    >Create</button>
+  </mat-dialog-actions>
+</div>

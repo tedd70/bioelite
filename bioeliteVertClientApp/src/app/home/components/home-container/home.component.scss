@@ -1,0 +1,28 @@
+.container {
+  width: 100%;
+
+  .home-guest-books {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    .btn-create {
+      button {
+        color: #1976d2;
+        margin: 32px 0;
+      }
+    }
+
+    .guest-books {
+
+      .each-guest-book {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        margin: 16px 0;
+        padding: 16px;
+        max-width: 400px;
+        box-shadow: 5px 10px #ddd;
+      }
+    }
+  }
+}
